@@ -20,6 +20,9 @@ ext {
 sourceCompatibility = '18'
 targetCompatibility = '18'
 
+/*sourceCompatibility = '11'
+targetCompatibility = '11'*/
+
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
 }
@@ -54,4 +57,12 @@ jlink {
 
 jlinkZip {
     group = 'distribution'
+}
+
+sourceSets {
+    test {
+        java {
+            srcDir 'src/test'
+        }
+    }
 }
